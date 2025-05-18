@@ -1,0 +1,74 @@
+\documentclass[12pt]{report}
+% Packages
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage{url}
+\usepackage{pgfgantt}
+\usepackage[strings]{underscore}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{tabularray} % Required for longtblr
+
+% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+\patchcmd{\abstract}{\titlepage}{\titlepage% Insert ToC-writing after starting a titlepage
+    \addcontentsline{toc}{chapter}{Resumen}}{}{}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\hypersetup{
+    urlcolor={blue!70!black},      
+    pdftitle={Trabajo final estadística},
+    pdfpagemode=FullScreen,
+}
+
+\setlength{\parindent}{0pt} % Remove paragraph indentation
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+ 
+        \Large\textbf{Análisis de las vidas de los estudiantes}
+ 
+        \vspace{0.5cm}
+            Trabajo final de inferencia estadística
+        \vspace{1.5cm}
+ 
+        \textbf{Antonio Cabrera Landín}
+ 
+        \vfill
+             
+        Trabajo para el doble grado de\\
+        Ingeniería del Software y Matemática Computacional\\
+             
+        \vspace{0.8cm}
+      
+        \includegraphics[width=0.4\textwidth]{figures/logo-u-tad.png}
+             
+        Inferencia Estadística\\
+        U-tad\\
+        España\\
+        Mayo 2025
+             
+    \end{center}
+ \end{titlepage}
+
+\tableofcontents
+
+\listoffigures
+
+\include{./chapters/abstract.tex}
+\include{./chapters/introducción.tex}
+
+\end{document}

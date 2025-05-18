@@ -175,3 +175,6 @@ cython_debug/
 
 # Enunciado de la práctica
 rúbrica.pdf
+
+# Latex
+out/
