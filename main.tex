@@ -1,4 +1,6 @@
+% Reporte con fuente de tamaño 12
 \documentclass[12pt]{report}
+
 % Packages
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
@@ -8,38 +10,33 @@
 \usepackage{float}
 \usepackage{listings}
 \usepackage{hyperref}
-\usepackage[square,sort,comma,numbers]{natbib}
 \usepackage{url}
 \usepackage{pgfgantt}
 \usepackage[strings]{underscore}
-\usepackage{booktabs}
-\usepackage{geometry}
-\usepackage{tabularray} % Required for longtblr
-
-% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
-\patchcmd{\abstract}{\titlepage}{\titlepage% Insert ToC-writing after starting a titlepage
-    \addcontentsline{toc}{chapter}{Resumen}}{}{}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
-
+\usepackage{natbib}
 \usepackage{fontspec}
+
 \setmainfont{Times New Roman}
 
+\bibliographystyle{plain}
+
 \hypersetup{
-    urlcolor={blue!70!black},      
-    pdftitle={Trabajo final estadística},
+    colorlinks=true,
+    linkcolor={black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Factores que afectan al rendimiento académico},
     pdfpagemode=FullScreen,
 }
 
 \setlength{\parindent}{0pt} % Remove paragraph indentation
 
 \begin{document}
-
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
  
-        \Large\textbf{Análisis de las vidas de los estudiantes}
+        \Large\textbf{Factores que afectan al rendimiento académico}
  
         \vspace{0.5cm}
             Trabajo final de inferencia estadística
@@ -64,11 +61,22 @@
     \end{center}
  \end{titlepage}
 
+\include{./abstract.tex}
+
 \tableofcontents
 
 \listoffigures
 
-\include{./chapters/abstract.tex}
-\include{./chapters/introducción.tex}
+\include{./chapters/introduccion.tex}
+
+\include{./chapters/planteamiento.tex}
+
+\include{./chapters/estado-cuestion.tex}
+
+\include{./chapters/desarrollo.tex}
+
+\include{./chapters/conclusiones.tex}
+
+\bibliography{bibliografia}
 
 \end{document}
