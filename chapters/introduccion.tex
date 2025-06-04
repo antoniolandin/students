@@ -1,5 +1,70 @@
 \chapter{Introducción}
 
-El rendimiento académico de los alumnos no se limita solo a lo que ocurre dentro del aula, sino que existen multiples factores externos que impactan en sus resultados escolares: su situación familiar, cuanto tiempo usan redes sociales, cuanto salen con los amigos o incluso si tienen pareja o no.\\
-En este trabajo exploraremos que factores de la vida personal de los alumnos influyen en sus notas. Para ello trabajaremos con el dataset \textit{Student Alcohol Consumption}, el cual está disponible públicamente en \href{https://www.kaggle.com/datasets/uciml/student-alcohol-consumption}{Kaggle}. Los datos provienen de un estudio \cite{Cortez2008} el cual se realizó en dos escuelas secundarias portuguesas. En este, se recopilaron datos sobre las notas académicas de los alumnos en las asignaturas de matemáticas y portugués, además de información sobre la vida personal de cada estudiante. \\
+El rendimiento académico de los alumnos no se limita solo a lo que ocurre dentro del aula, sino que existen multiples factores externos que impactan en sus resultados escolares: su situación familiar, cuanto tiempo usan redes sociales, cuanto salen con los amigos o incluso si tienen pareja o no.
+
+En este trabajo exploraremos que factores de la vida personal de los alumnos influyen en sus notas. Para ello trabajaremos con el dataset \textit{Student Alcohol Consumption}, el cual está disponible públicamente en \href{https://www.kaggle.com/datasets/uciml/student-alcohol-consumption}{Kaggle}. Los datos provienen de un estudio \cite{Cortez2008} el cual se realizó en dos escuelas secundarias portuguesas. En este, se recopilaron datos sobre las notas académicas de los alumnos en las asignaturas de matemáticas y portugués, además de información sobre la vida personal de cada estudiante. 
+
 En este análisis estadístico, nos centraremos en los datos correspondientes a los alumnos de matemáticas y analizaremos ciertos aspectos de su vida los cuales se asocian de forma significativa con sus niveles de asistencia en clase o sus calificaciones.
+
+\pagebreak
+
+% Primera tabla: Variables demográficas y familiares
+\begin{table}[htbp]
+\centering
+\caption{Descripción de las variables del conjunto de datos (Parte 1: Variables demográficas y familiares)}
+\begin{tabular}{lp{8cm}}
+\hline
+\textbf{Atributo} & \textbf{Descripción (Dominio)} \\
+\hline
+\textbf{sex} & Sexo del estudiante (binario: femenino o masculino) \\
+\textbf{age} & Edad del estudiante (numérico: de 15 a 22 años) \\
+\textbf{school} & Escuela del estudiante (binario: Gabriel Pereira o Mousinho da Silveira) \\
+\textbf{address} & Tipo de dirección del hogar (binario: urbano o rural) \\
+\textbf{Pstatus} & Estado de convivencia de los padres (binario: viven juntos o separados) \\
+\textbf{Medu} & Nivel educativo de la madre (numérico: de 0 a 4) \\
+\textbf{Mjob} & Trabajo de la madre (nominal: teacher, health, services, at\_home, other) \\
+\textbf{Fedu} & Nivel educativo del padre (numérico: de 0 a 4) \\
+\textbf{Fjob} & Trabajo del padre (nominal: teacher, health, services, at\_home, other) \\
+\textbf{guardian} & Tutor del estudiante (nominal: madre, padre u otro) \\
+\textbf{famsize} & Tamaño de la familia (binario: $\leq$ 3 o $>$ 3) \\
+\textbf{famrel} & Calidad de las relaciones familiares (numérico: de 1 - muy mala a 5 - excelente) \\
+\textbf{reason} & Razón para elegir la escuela (nominal: cercanía al hogar, reputación de la escuela, preferencia por el curso u otro) \\
+\textbf{traveltime} & Tiempo de viaje de casa a la escuela (numérico: 1 - $<$15 min, 2 - 15-30 min, 3 - 30 min-1h, 4 - $>$1h) \\
+\textbf{internet} & Acceso a Internet en casa (binario: sí o no) \\
+\textbf{nursery} & Asistió a educación preescolar (binario: sí o no) \\
+\hline
+\end{tabular}
+\label{tab:variables_parte1}
+\end{table}
+
+\pagebreak
+
+% Segunda tabla: Variables académicas y de comportamiento
+\begin{table}[htbp]
+\centering
+\caption{Descripción de las variables del conjunto de datos (Parte 2: Variables académicas y de comportamiento)}
+\begin{tabular}{lp{8cm}}
+\hline
+\textbf{Atributo} & \textbf{Descripción (Dominio)} \\
+\hline
+\textbf{studytime} & Tiempo de estudio semanal (numérico: 1 - $<$2h, 2 - 2-5h, 3 - 5-10h, 4 - $>$10h) \\
+\textbf{failures} & Número de reprobaciones previas (numérico: n si 1$\leq$n$<$3, sino 4) \\
+\textbf{schoolsup} & Apoyo educativo adicional de la escuela (binario: sí o no) \\
+\textbf{famsup} & Apoyo educativo familiar (binario: sí o no) \\
+\textbf{activities} & Actividades extracurriculares (binario: sí o no) \\
+\textbf{paidclass} & Clases pagadas adicionales (binario: sí o no) \\
+\textbf{higher} & Aspira a educación superior (binario: sí o no) \\
+\textbf{romantic} & Tiene una relación romántica (binario: sí o no) \\
+\textbf{freetime} & Tiempo libre después de la escuela (numérico: de 1 - muy poco a 5 - mucho) \\
+\textbf{goout} & Salidas con amigos (numérico: de 1 - muy pocas a 5 - muy frecuentes) \\
+\textbf{Walc} & Consumo de alcohol en fines de semana (numérico: de 1 - muy bajo a 5 - muy alto) \\
+\textbf{Dalc} & Consumo de alcohol en días laborales (numérico: de 1 - muy bajo a 5 - muy alto) \\
+\textbf{health} & Estado de salud actual (numérico: de 1 - muy malo a 5 - excelente) \\
+\textbf{absences} & Número de ausencias escolares (numérico: de 0 a 93) \\
+\textbf{G1} & Nota del primer período (numérico: de 0 a 20) \\
+\textbf{G2} & Nota del segundo período (numérico: de 0 a 20) \\
+\textbf{G3} & Nota final (numérico: de 0 a 20) \\
+\hline
+\end{tabular}
+\label{tab:variables_parte2}
+\end{table}

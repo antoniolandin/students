@@ -16,9 +16,11 @@
 \usepackage{natbib}
 \usepackage{fontspec}
 
+\usepackage{caption}
 \setmainfont{Times New Roman}
-
-\bibliographystyle{plain}
+\setlength{\parskip}{6pt}
+\captionsetup[table]{skip=10pt} % Ajusta el valor (10pt es un ejemplo)
+\setlength{\parindent}{0pt} % Remove paragraph indentation
 
 \hypersetup{
     colorlinks=true,
@@ -29,7 +31,8 @@
     pdfpagemode=FullScreen,
 }
 
-\setlength{\parindent}{0pt} % Remove paragraph indentation
+\bibliographystyle{plain}
+
 
 \begin{document}
 \begin{titlepage}
