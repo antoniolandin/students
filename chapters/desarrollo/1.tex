@@ -1,0 +1,88 @@
+\section{¿Aumenta la pareja el número de faltas en clase?}
+En nuestro dataset una proporción considerable de alumnos tienen una relación de pareja.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figures/proporcion-solteros-pareja.png}
+    \caption{Proporción de alumnos solteros vs con pareja}
+    \label{fig:prop-solteros}
+\end{figure}
+
+\pagebreak
+
+Además, vemos que la edad de los estudiantes está comprendida entre los 15 y 22 años. Podemos suponer que en estas edades las relaciones románticas tienen mucho impacto en la vida escolar, en concreto en la asistencia en clase.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./figures/edad-alumnos.png}
+    \caption{Histograma de las edades de los alumnos}
+    \label{fig:hist-edad}
+\end{figure}
+
+Por lo tanto, con el objetivo de estudiar que factores de la vida personal de los alumnos influyen en sus notas escolares, vamos a comenzar contrastando si tener pareja aumenta el número de faltas en clase.
+\begin{equation*}
+    \begin{split}
+        & X \equiv \text{Número de faltas en clase de los alumnos con pareja}\\
+        & Y \equiv \text{Número de faltas en clase de los alumnos solteros}
+    \end{split} 
+\end{equation*}
+
+\pagebreak
+
+Para poder elegir un contraste de hipótesis, primero debemos estudiar la distribución de los datos.
+
+Viendo los gráficos de distribución de el número de faltas en clase de los alumnos con pareja y solteros podemos asumir que los datos no provienen de una población normal, ya que en ambos casos son datos muy asimétricos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/distribucion-numero-faltas.png}
+    \caption{Gráficos de distribución del número de faltas de los alumnos}
+    \label{fig:dist-num-faltas}
+\end{figure}
+
+Para asegurarnos de que estamos en lo correcto realizaremos un contraste de normalidad. En nuestro caso utilizaremos el test Ómnibus d´Agostino, ya que nuestros datos cumplen con el requisito de tener más de 20 entradas ($n>20$).
+
+Realizaremos el test tanto para alumnos solteros como para alumnos con pareja. Las hipótesis para los alumnos solteros serían las siguientes:
+
+\begin{itemize}
+    \item \textbf{Hipótesis nula ($H_0$)}: $X \sim N(\mu, \sigma)$ (Los datos del número de faltas en alumnos con pareja siguen una distribución normal)
+    \item \textbf{Hipótesis alternativa ($H_a$)}: $X \not \sim N(\mu, \sigma)$ (Los datos del número faltas en alumnos con pareja no sigue una distribución normal)
+\end{itemize}
+
+\pagebreak
+
+En el caso de los alumnos con pareja al calcular el estadístico de contraste observado obtenemos $K^2_x = 116.45$ y al calcular el p-valor obtenemos un valor muy cercano al cero.
+
+\begin{equation*}
+    \text{p-valor} = P(K^2_x > 116.45) \approx 0
+\end{equation*}
+
+Por lo tanto, en el caso de los alumnos solteros, los datos muestran evidencias suficientes para rechazar la hipótesis nula de que el número de faltas en la muestra sigue una distribución normal.
+
+En el caso de los alumnos con pareja obtendremos las mismas conclusiones, por lo que aceptaremos la no-normalidad de los datos en ambos casos.
+\pagebreak
+
+Como asumimos que los datos no provienen de una distribución normal utilizaremos un contraste no paramétrico. Como estamos trabajando con muestras independientes, elegiremos el contraste U de Mann-Whitney.
+
+Para ello plantearemos las siguientes hipótesis:
+
+\begin{itemize}
+    \item \textbf{Hipótesis nula ($H_0$)}: $\mu_x = \mu_y$ (No existe una diferencia significativa entre el número de faltas medio entre los alumnos con pareja y solteros)
+    \item \textbf{Hipótesis alternativa ($H_a$)}: $\mu_x > \mu_y$ (El número de faltas medio en los alumnos con pareja es mayor que el de los alumnos solteros)
+\end{itemize}
+
+Al calcular es estadístico de contraste $U$ obtenemos un valor observado de 18787.5, el cual sugiere diferencias pequeñas entre ambas poblaciones.
+\begin{equation*}
+    \text{p-valor} = P(U > 18787.5) = 0.0874 > \alpha 
+\end{equation*}
+
+Viendo que el p-valor supera nuestro nivel de significación $\alpha$ de 0.05, podemos afirmar que al $5\%$ los datos no muestran evidencias suficientes como para rechazar la hipótesis de que no exista una diferencia significativa entre el número de faltas medios de los alumnos solteros y con pareja.
+
+Este resultado es sorprendente ya que la media faltas en solteros es de $4.84$ faltas y en alumnos con pareja es de $7.44$ faltas. 
+\begin{equation*}
+    \begin{split}
+        & \bar{x} = 7.44\\
+        & \bar{y} = 4.84
+    \end{split}
+\end{equation*}
+
+Pero en definitiva, aceptamos que el hecho de tener pareja no afecta significativamente al número de faltas medio a lo largo del curso.

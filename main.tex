@@ -15,8 +15,8 @@
 \usepackage[strings]{underscore}
 \usepackage{natbib}
 \usepackage{fontspec}
-
 \usepackage{caption}
+
 \setmainfont{Times New Roman}
 \setlength{\parskip}{6pt}
 \captionsetup[table]{skip=10pt} % Ajusta el valor (10pt es un ejemplo)
@@ -33,52 +33,20 @@
 
 \bibliographystyle{plain}
 
-
 \begin{document}
-\begin{titlepage}
-    \begin{center}
-        \vspace*{1cm}
- 
-        \Large\textbf{Factores que afectan al rendimiento académico}
- 
-        \vspace{0.5cm}
-            Trabajo final de inferencia estadística
-        \vspace{1.5cm}
- 
-        \textbf{Antonio Cabrera Landín}
- 
-        \vfill
-             
-        Trabajo para el doble grado de\\
-        Ingeniería del Software y Matemática Computacional\\
-             
-        \vspace{0.8cm}
-      
-        \includegraphics[width=0.4\textwidth]{figures/logo-u-tad.png}
-             
-        Inferencia Estadística\\
-        U-tad\\
-        España\\
-        Mayo 2025
-             
-    \end{center}
- \end{titlepage}
 
-\include{./abstract.tex}
+\include{titlepage}
+
+\include{abstract}
 
 \tableofcontents
-
 \listoffigures
 
-\include{./chapters/introduccion.tex}
-
-\include{./chapters/planteamiento.tex}
-
-\include{./chapters/estado-cuestion.tex}
-
-\include{./chapters/desarrollo.tex}
-
-\include{./chapters/conclusiones.tex}
+\include{chapters/introduccion}
+\include{chapters/planteamiento}
+\include{chapters/estado-cuestion}
+\include{chapters/desarrollo}
+\include{chapters/conclusiones}
 
 \bibliography{bibliografia}
 
