@@ -1,1 +1,48 @@
 \chapter{Conclusiones}
+
+Este estudio ha explorado diversos factores externos que influyen en el rendimiento académico de estudiantes de secundaria, utilizando técnicas estadísticas para contrastar hipótesis y un modelo predictivo para evaluar su impacto conjunto.
+
+\section{Resultados del trabajo}
+
+A continuación, se resumen las principales conclusiones derivadas de los análisis realizados:  
+
+\begin{enumerate}
+    \item \textbf{Relaciones románticas y asistencia a clase}
+
+    Aunque los alumnos con pareja presentaron un mayor número medio de faltas (7,44 frente a 4,84 en solteros), el contraste de Mann-Whitney no mostró diferencias significativas al 5\% de significación. Esto sugiere que, a pesar de la percepción generalizada, tener pareja no afecta significativamente a la asistencia escolar. 
+    \item \textbf{Evolución de las notas a lo largo del curso}
+
+    El análisis confirmó que las notas mejoran significativamente del primer período (G1) al final (G3), respaldando la efectividad del sistema educativo evaluado.
+
+    \item \textbf{Clases particulares y probabilidad de aprobar}
+
+    Los alumnos que recibieron clases particulares tuvieron una tasa de aprobados mayor (71,82\%) frente a quienes no las tomaron (63,08\%). El contraste de proporciones mostró que esta diferencia es estadísticamente significativa al 5\%, lo que respalda la utilidad de las clases de refuerzo. Sin embargo, como ya hemos visto, estudios previos \cite{baker2001worldwide} \cite{wiseman2021does} dudan de la efectividad real de las clases particulares tradicionales.
+
+    \item \textbf{Acceso a internet y variabilidad en las notas}
+
+    El acceso a internet no mostró un impacto significativo en la dispersión de las calificaciones, según el contraste de Levene. Una hipótesis puede ser que en la escuela del conjunto de datos no está extendida la adicción a internet, ya que como hemos visto en otros estudios \cite{vila2018rendimiento}, el uso problemático de internet puede conllevar un impacto significativo en las notas de los alumnos.
+
+    \item \textbf{Consumo de alcohol y rendimiento académico}
+
+    A pesar de que el 62\% de los alumnos consumía alcohol los fines de semana, no se encontró una diferencia significativa en las notas medias respecto a los no consumidores. Este resultado contrasta con investigaciones previas que vinculan el consumo temprano de alcohol con bajo rendimiento \cite{wagner2007alcohol}.
+\end{enumerate}
+
+    Respecto al modelo LOGIT desarrollado existe mucho margen de mejora. Al realizar el contraste de significancia de sus parámetros, vimos que no elegimos las mejores variables para predecir si los alumnos aprueban o suspenden. Además, solo tuvimos en cuenta 4 de las 30 variables de las que disponemos en el dataset.   
+
+\section{Reflexiones finales}
+
+Los resultados subrayan que el rendimiento académico es multifactorial y no puede atribuirse únicamente a variables aisladas. Factores como las clases particulares y la asistencia a clase demostraron tener un impacto tangible, mientras que otros (relaciones románticas, internet o alcohol) no fueron concluyentes en este contexto. Esto nos alerta de no solo fijarnos en los factores internos de los centros educativos, sino además tener más en cuenta los externos para poder desarrollar soluciones académicas más efectivas
+
+\section{Limitaciones y futuras líneas de investigación}
+
+\begin{itemize}
+    \item La muestra proviene de un contexto geográfico y cultural específico (Portugal), lo que limita la generalización.  
+    \item Algunas de las variables cualitativas pueden estar sesgadas (por ejemplo cuando se les pregunta a los alumnos por sus relaciones familiares).
+    \item Se podrían utilizar técnicas de \textit{machine learning} para predecir las notas de los alumnos.
+\end{itemize}
+
+La mayor limitación de este trabajo quizá sea la falta de extensión y de estudio de los datos. Solo hemos conseguido abarcar 5 de las 30 variables del conjunto de datos, además se podría indagar mucho más en análisis de cada una de ellas.
+
+\section{Reflexión personal}
+
+En lo personal, este trabajo ha sido un valioso acercamiento al mundo académico de la estadística y me ha servido para ver las aplicaciones reales de la inferencia estadística para acercarnos a las verdades de los problemas que afectan a nuestra era.
