@@ -1,7 +1,6 @@
 \section{¿Aumenta el acceso a internet la variabilidad de la nota?}
 
 Internet puede ser una poderosa herramienta para el aprendizaje de los alumnos, aportando una cantidad inmensurable de materiales didácticos de forma gratuita. Sin embargo, también trae consigo las redes sociales, a las cuales se les atribuye varios efectos adversos como la perdida la de atención.
-
 \begin{equation*}
     \begin{split}
         & X \equiv \text{Nota final de los alumnos con acceso a internet}\\
@@ -23,7 +22,7 @@ Antes de elegir el test, debemos comprobar la normalidad de los datos para ver s
     \begin{center}
         \includegraphics[width=1\textwidth]{figures/dist-notas-internet.png}
     \end{center}
-    \caption{Distribución de las notas finales con y sin internet}\label{fig:dist-notas-internet}
+    \caption{Gráficos de distribución de las notas finales con y sin internet}\label{fig:dist-notas-internet}
 \end{figure}
 
 Como en casos anteriores, utilizaremos el test de Ómnibus d´Agostino.
@@ -36,13 +35,7 @@ Como en casos anteriores, utilizaremos el test de Ómnibus d´Agostino.
 
 En ambos casos, al $5 \%$, rechazaríamos la hipótesis nula de normalidad.
 
-Aunque nuestros datos tienen asimetría negativa moderada y son muestras grandes, el contraste $F$ de diferencia de varianzas es muy sensible a la no-normalidad de los datos. Por lo tanto, viendo que los datos muestran evidencias suficientes como para rechazar la normalidad, nos decantaremos por un test no-paramétrico.
-\begin{equation*}
-    \begin{split}
-        & n_{1} = 329\\
-        & n_{2} = 66
-    \end{split}
-\end{equation*}
+Aunque nuestros datos tienen asimetría negativa moderada y son muestras grandes, el contraste $F$ de diferencia de varianzas es especialmente sensible a la no-normalidad de los datos. Por lo tanto, viendo que los datos muestran evidencias suficientes como para rechazar la normalidad, nos decantaremos por un test no-paramétrico.
 \begin{equation*}
     \begin{split}
         & \gamma_{1}(x) = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^3}{n \cdot s^3} = -0.75\\
@@ -59,7 +52,7 @@ Aplicaremos un contraste de Levene de igualdad de varianzas.
 
 Al calcular el estadístico de contraste $W$ obtenemos los siguientes resultados:
 \begin{equation*}
-    W = 0.17 \Rightarrow P(F_{k-1,N-k} > W) = P(F_{1, 393} > 0.17) = 0.68
+    W = 0.17 \Rightarrow \text{p-valor} = P(F_{k-1,N-k} > W) = P(F_{1, 393} > 0.17) = 0.68
 \end{equation*}
 
 Entonces, como hemos obtenido un p-valor alto, los datos son compatibles con la hipótesis nula de igualdad de varianzas. Los datos no muestran evidencias suficientes como para rechazar que las varianzas en las notas de los alumnos con y sin internet sean iguales. Por lo tanto, aceptaremos que el hecho de tener internet no influye en la variabilidad de la nota.
